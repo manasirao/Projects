@@ -1,0 +1,386 @@
+<html>
+<head>
+<title>Manasi's News </title>
+<style>
+
+body {
+  margin:0;
+  line-height:14px;
+  font-style: Arial,sans-serif;
+}
+  #topbar {
+    background-color: #FFFFFF;
+    height:40px;
+    width:100%;
+    float: left;
+  }
+
+  .fixedwidth {
+    width:1050px;
+    margin: 0 auto;
+  }
+
+  #bbclogo {
+    width: 90px;
+    padding:3px 15px 0 40px ;
+    border-right-style: solid;
+    border-right-color: #CCCCCC;
+    border-right-width: 1px;
+    height:36px;
+    float: left;
+  }
+
+  #bbclogo img {
+    height:70%;
+    margin:5px;
+  }
+
+  #signin {
+    width: 90px;
+    font-weight:bold;
+    font-size: 0.9em;
+    font-style: Arial;
+    padding:6px 40px 0 15px ;
+    border-right-style: solid;
+    border-right-color: #CCCCCC;
+    border-right-width: 1px;
+    height:33px;
+    float: left;
+  }
+
+  #signin img {
+    height:60%;
+    position: relative;
+    top: 3px;
+    right: 4px;
+  }
+
+  ul {
+    list-style: none;
+    margin: 0;
+  }
+
+#top-menu li {
+  float: left;
+  font-weight: bold;
+  font-size: 0.9em;
+  padding: 12px 15px;
+  border-right-style: solid;
+  border-right-color: #CCCCCC;
+  border-right-width: 1px;
+  height:16px;
+}
+
+#search-bar {
+  float:left;
+  padding: 5px 5px 0 10px;
+}
+
+#search-bar input {
+  background-image: url("images/magnify.png");
+  background-color: #E4E4E4;
+  background-repeat: no-repeat;
+  background-position: right;
+  background-size: 15px 15px;
+  height: 28px;
+  width: 200px;
+  border:none;
+  padding: 6px 10px 2px 6px;
+  font-size: 0.9em;
+
+
+}
+div{
+  margin:0;
+}
+.clearfloat{
+  clear: both;
+}
+  #middlebar {
+    background-color: #BB1919;
+    height:90px;
+    width:100%;
+  }
+
+  #title {
+    color:white;
+    padding:25px 0 0 45px;
+    font-size: 42px;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  #lowerbar {
+    background-color: #A91717;
+    margin-top:18px;
+    height:30px;
+    width:100%;
+  }
+
+  #newsbar{
+  }
+
+#newsbar ul {
+  padding: 10px 34px;
+}
+  #newsbar li {
+    float: left;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 0.9em;
+    color: white;
+    border-right-style: solid;
+    border-right-color: #BB4545;
+    border-right-width: 1px;
+    padding: 0 10px 0 12px;
+  }
+h1{
+  font-weight: bold;
+  padding:5px 0 0 45px;
+  color:#5A5A5A;
+}
+h1:hover{
+  color:#1167A8;
+}
+#newsarea1{
+  border-right-style: solid;
+  border-right-color: #DBDBDB;
+  border-right-width: 1px;
+  width:705px;
+  height:700px;
+  float: left;
+
+}
+.content {
+  color: #5A5A5A;
+  width: 262px;
+  padding: 0 5px 0 45px;
+  font-size: 0.9em;
+  font-family: sans-serif;
+  float: left;
+}
+
+.pic img {
+  height:240px;
+  width:380px;
+  float:left;
+}
+
+.time{
+  float:left;
+  height: 3px;
+  border-right-style: solid;
+  border-right-color: ##DCDCDC;
+  border-right-width: 1px;
+  background-image: url("images/clock.png");
+  background-repeat: no-repeat;
+  background-position: left;
+  background-size:contain;
+  padding: 1px 8px 10px 15px;
+  font-size:0.9em;
+  font-family: sans-serif;
+}
+
+.place p{
+  margin:0;
+}
+
+.place {
+  float: left;
+  height: 3px;
+  padding: 1px 0 0 5px;
+  color: #BB4545;
+  font-size: 0.9em;
+  font-family: sans-serif;
+}
+
+.place1 {
+  float: left;
+  height: 3px;
+  padding: 3px 0 0 8px;
+  color: #BB4545;
+  font-size: 0.9em;
+  word-wrap: normal;
+  font-family: sans-serif;
+}
+a:hover{
+  color:#1167A8;
+}
+
+.link{
+  float:inherit;
+}
+
+.link a{
+  text-decoration: none;
+  color: black;
+}
+
+.video{
+  background-image: url("images/triangle.png");
+  background-repeat: no-repeat;
+  background-position: left;
+  background-size: 18px 13px;
+  padding-left: 25px;
+}
+
+#watchdiv{
+  float: left;
+  width: 325px;
+}
+
+#watchdiv h2{
+  color:#404040;
+  padding: 10px 0 0 20px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 25px;
+}
+#livebutton{
+  font-family: Arial, Helvetica, sans-serif;
+  background-image: url("images/live.png");
+  background-repeat: no-repeat;
+  background-position: left;
+  background-size: contain;
+  margin:10px;
+  padding-left: 50px;
+  font-size: 1.1em;
+}
+
+#watchone{
+  margin:10px;
+  padding: 15px 0 0 0;
+  font-weight: bold;
+  line-height:19px;
+}
+
+.watchoneimg{
+  height:60px;
+  width:110px;
+  float:left;
+  padding-right: 10px;
+}
+
+#watchtwo{
+  margin:5px 0 0 10px;
+  padding: 10px 0 0 0;
+  font-weight: bold;
+  line-height:19px;
+  float: left;
+}
+
+#listentwo p{
+  padding: 15px 0 5px 0;
+  margin:0;
+  font-weight: bold;
+  line-height:19px;
+}
+
+</style>
+</head>
+
+<body>
+  <div id="container">
+    <div id="topbar">
+      <div class="fixedwidth">
+
+        <div id="bbclogo">
+          <img src="images/bbc.png" />
+        </div>
+
+        <div id="signin">
+            <img src="images/signin.png"> Sign in <img />
+        </div>
+
+        <div id="top-menu">
+          <ul>
+            <li>News</li>
+            <li>Sport</li>
+            <li>Weather</li>
+            <li>Shop</li>
+            <li>Earth</li>
+            <li>Travel</li>
+            <li>More ..</li>
+         </ul>
+       </div>
+
+       <div id="search-bar">
+         <input type="text" placeholder="Search"/>
+       </div>
+      </div>
+    </div>
+
+    <div class="clearfloat" />
+
+    <div id="middlebar">
+      <div class="fixedwidth">
+        <div id="title">NEWS</div>
+      </div>
+
+      <div id="lowerbar">
+        <div class="fixedwidth">
+          <div id="newsbar">
+            <ul>
+              <li>Home</li>
+              <li>Video</li>
+              <li>World</li>
+              <li>US & Canada</li>
+              <li>UK</li>
+              <li>Business</li>
+              <li>Tech</li>
+              <li>Science</li>
+              <li>Magazine</li>
+              <li>Entertainment & Arts</li>
+              <li>Health</li>
+              <li>More ..</li>
+           </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="clearfloat" />
+
+
+      <div class="fixedwidth">
+        <div id="newsarea1">
+          <h1>Migrants moved on as nations squabble</h1>
+          <div class="content">
+              <p> Migrants seeking to enter the EU from the south-east are shunted from one border to another as countries disagree over the crisis. </p>
+
+              <div class="time">
+                 17 minutes ago
+              </div>
+              <div class="place"> <a>Europe</a> </div>
+
+              <div class="link">
+              <p><a href="">Migrant crisis: Day's events </a></p>
+              <p><a class="video" href="">Walking into the Schengen zone </a></p>
+              <p><a href="">How is crisis dividing EU? </a></p>
+              <p><a href="">Hungary bitterly divided </a></p>
+            </div>
+          </div>
+          <div class="pic">
+            <img src="images/news_image1.png"/>
+          </div>
+      </div>
+
+      <div id="watchdiv">
+        <h2>Watch/Listen</h2>
+        <p id="livebutton">World Service Radio. </p>
+        <div>
+          <p id="watchone"><img class="watchoneimg" src="images/watch1.png" />'It's a journey for a new life.'</p>
+          <div class="time">1 hour ago</div>
+          <div class="place"> <a>Europe</a> </div>
+        </div>
+      </br>
+        <div id="listentwo">
+          <div id="watchtwo"><img class="watchoneimg" src="images/watch2.png" /> </div>
+            <p>Pressure on Zagreb reception centers</p>
+            <div class="time">19 September 2015</div>
+            <div class="place"><a>Europe</a> </div>
+        </div>
+      </div>
+    </div>
+
+
+
+  </div>
+</body>
+</html>

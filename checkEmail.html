@@ -1,0 +1,47 @@
+<html>
+<head>
+  <title>Mansi's webpage</title>
+
+<script type="text/javascript">
+
+</script>
+</head>
+<body>
+<script>
+function checkEmail() {
+  var name = document.getElementById('email').value;
+  var x = name.length;
+  var amp = 0;
+  var i = 0;
+  document.getElementById('output').innerHTML= x;
+  for (i=1; i <= name.length; i ++) {
+      if(name[i] == '@') {
+      amp++;
+      console.log(amp);
+      }
+  }
+  if (amp == 1){
+      document.getElementById('valid').innerHTML= "Valid Email Address";
+  } else {
+      document.getElementById('valid').innerHTML= "Invalid Email id";
+  }
+
+}
+</script>
+
+<p>Enter your email id</p>
+<input type='text' id='email' />
+<input type='button' onclick='checkEmail()' value='submit' />
+<div id='output'> </div>
+<div id='valid'> </div>
+
+<footer>
+  <div>
+    <ul>
+      <li><a href='#' target='_blank'> Terms of Service</a>
+      <li><a href='#'> Conditions</a>
+    </ul>
+  </div>
+</footer>
+</body>
+</html>
