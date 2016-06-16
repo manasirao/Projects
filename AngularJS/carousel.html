@@ -1,0 +1,41 @@
+
+
+        <div id="myCarousel" class="carousel slide" data-ride="carousel">
+        <!--    <ol class="carousel-indicators">
+              <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+              <li data-target="#myCarousel" data-slide-to="1"></li>
+              <li data-target="#myCarousel" data-slide-to="2"></li>
+
+            </ol> -->
+
+            <!-- Wrapper for slides -->
+         <div class="carousel-inner" role="listbox">
+           <div  ng-repeat="img in slide" ng-class="{item: true, active : ($index === 0)}">
+                    <img  ng-src="images/{{img.image}}">
+                    <div class="carousel-caption">
+                   <h3 ng-animate=" 'animate' ">{{img.caption}}</h3>
+               </div>
+           </div>
+
+            </div>
+
+            <div class="controlsBlock">
+                <div class="controls">
+                    <!-- Left and right controls -->
+                    <a class="left carousel-control" ng-click="left()" role="button" data-slide="prev">
+                        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="right carousel-control"  ng-click="right()" role="button" data-slide="next">
+                        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                        <span class="sr-only">Next</span>
+                    </a>
+                    <div class="carousel-indicators">
+                        <li data-target="#myCarousel" ng-repeat="img in slide" ng-class="{active : (img === 0)}" data-slide-to="{{$index}}"></li>
+                    <!--    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                        <li data-target="#myCarousel" data-slide-to="1"></li>
+                        <li data-target="#myCarousel" data-slide-to="2"></li> -->
+                    </div>
+                </div>
+            </div>
+        </div>
