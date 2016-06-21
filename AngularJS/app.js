@@ -2,38 +2,45 @@ var myApp = angular.module('myApp', ['ngRoute','ngResource','ngAnimate']);
 
 //ROUTE PROVIDER
 myApp.config(function($routeProvider){
-  $routeProvider
-    .when('/',{
-      templateUrl: 'home.html',
-      controller: 'homeController'
-    })
-    .when('/todo',{
-      templateUrl: 'todo.html',
-      controller:'firstcontroller'
-    })
-    .when('/colorChange',{
-      templateUrl: 'color.html',
-      controller:'secondcontroller'
-    })
-    .when('/forecast',{
-      templateUrl: 'forecast.html',
-      controller: 'forecastController'
-    })
-    .when('/forecast/:days',{
-      templateUrl: 'forecast.html',
-      controller: 'forecastController'
-    })
-    .when('/carousel',{
-      templateUrl: 'carousel.html',
-      controller: 'carouselController'
-    })
-
+    $routeProvider
+        .when('/',{
+            templateUrl: 'home.html',
+            controller: 'homeController'
+        })
+        .when('/todo',{
+            templateUrl: 'todo.html',
+            controller:'firstController'
+        })
+        .when('/colorChange',{
+            templateUrl: 'color.html',
+            controller:'secondController'
+        })
+        .when('/forecast',{
+            templateUrl: 'forecast.html',
+            controller: 'forecastController'
+        })
+        .when('/forecast/:days',{
+            templateUrl: 'forecast.html',
+            controller: 'forecastController'
+        })
+        .when('/carousel',{
+            templateUrl: 'carousel.html',
+            controller: 'carouselController'
+        })
+        .when('/editor',{
+            templateUrl: 'editor.html',
+            controller: 'editorController'
+        })
+        .when('/order',{
+            templateUrl: 'order.html',
+            controller: 'orderController'
+        })
 });
 
 
 // TO DO LIST
 
-myApp.controller('firstcontroller',['$scope',function($scope){
+myApp.controller('firstController',['$scope','$route',function($scope,$route){
   $scope.count = 0;
   $scope.selection;
   $scope.todoList = [];
@@ -52,10 +59,24 @@ myApp.controller('firstcontroller',['$scope',function($scope){
     $scope.todoList.length = 0;
     $scope.count = 0;
   }
+    console.log($route.current);
 }]);
 
-myApp.controller('secondcontroller',['$scope',function($scope){
-  $scope.name= "";
+myApp.controller('secondController',['$scope','$route',function($scope,$route){
+    $scope.name= "";
+    $scope.showOrHide = false;
+    $scope.showName = "Hide Element";
+
+    $scope.toggleElem = function() {
+        $scope.showOrHide = !$scope.showOrHide;
+        if($scope.showOrHide) {
+            $scope.showName = "Show Element";
+        } else {
+            $scope.showName = "Hide Element"
+        }
+
+    }
+    console.log($route.current);
 }]);
 
 
@@ -65,7 +86,7 @@ myApp.service('forecastService',function() {
     this.city = "Dallas, TX";
 })
 
-myApp.controller('homeController',['$scope','forecastService',function($scope, forecastService) {
+myApp.controller('homeController',['$scope','forecastService','$route',function($scope, forecastService,$route) {
   $scope.city = forecastService.city;
   $scope.$watch('city',function(){
     forecastService.city = $scope.city;
@@ -95,6 +116,7 @@ myApp.controller('forecastController',['$scope','$resource','$routeParams','fore
   $scope.convertToDate = function(dt) {
     return new Date(dt * 1000);
   }
+    console.log($route.current);
 }]);
 
 myApp.directive('weatherReport',function(){
@@ -133,7 +155,7 @@ myApp.directive('changeColor',function() {
 
 
 //CAROUSEL
-myApp.controller('carouselController',['$scope',function($scope) {
+myApp.controller('carouselController',['$scope','$route',function($scope,$route) {
   console.log('Carousel Controller');
   var c = angular.element(document).find('#myCarousel');
   var car = $(c);
@@ -150,4 +172,37 @@ myApp.controller('carouselController',['$scope',function($scope) {
     {image:'IMG_9310.JPG',caption:'Beautiful'},
     {image:'IMG_6962.JPG',caption:'Amazing'}
   ];
+    console.log($route.current);
+}]);
+
+//INLINE EDITOR
+myApp.controller('editorController',['$scope',function($scope) {
+    $scope.editArea='Edit Me';
+    $scope.isHidden = false;
+    $scope.editMe = function() {
+        $scope.isHidden = !$scope.isHidden;
+
+    }
+}]);
+
+//ORDER FORM
+myApp.controller('orderController',['$scope', function($scope) {
+    $scope.orderList = [
+        { name: 'Frocks', price: 200, selected :false },
+        { name: 'Skirts',price: 250, selected :false },
+        { name: 'Shirts',price: 350, selected :false },
+        { name: 'T-shirts',price: 150, selected :false },
+        { name: 'Tie',price: 50, selected :false }
+    ];
+    $scope.total = 0;
+    $scope.selectItem = function(item) {
+        item.selected = !item.selected;
+        if(item.selected) {
+            $scope.total += item.price;
+        } else {
+            $scope.total = $scope.total - item.price;
+        }
+    }
+
+
 }]);

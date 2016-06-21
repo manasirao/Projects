@@ -1,0 +1,14 @@
+<div ng-controller="orderController">
+    <div class="row">
+        <div class="col-md-8 col-md-offset-2 square">
+            <div><h1 class="heading">Order Form</h1></div>
+            <ul  class="list-group">
+
+                   <li ng-repeat="item in orderList" class="list-group-item" ng-click="selectItem(item)" ng-class="item.selected ? 'list-group-item-success':'list-group-item-danger'">
+                       <h4>{{item.name}}<span class="pull-right">${{item.price}}</span></h4>
+                   </li>
+            </ul>
+            <div class="sum"><h3>Total<span class="pull-right">${{total}}</span></h3></div>
+        </div>
+    </div>
+</div>

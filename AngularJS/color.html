@@ -1,4 +1,4 @@
-<div ng-controller="secondcontroller">
+<div ng-controller="secondController">
   <div class="row">
     <div class="col-lg-6 col-lg-offset-3">
       <div>
@@ -7,6 +7,10 @@
       </br>
       <change-color></change-color>
       </div>
+
+      <button type="button" class="btn-primary" ng-click="toggleElem()"> {{ showName}}</button>
+        <p ng-hide="showOrHide"> Hide Me Please... !!! </p>
     </div>
+      <div> You are in {{active}} tab</div>
   </div>
 </div>

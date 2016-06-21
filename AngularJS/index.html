@@ -182,11 +182,53 @@ input[type=checkbox]{
         top: 0;
     }
 
-    .animate-leave {
-        top: 0;
+
+    .square {
+        border:1px solid grey;
+        height: 530px;
+        margin-top: 50px;
+        background-color:#61A1BC ;
     }
-    .animate-leave.animate-leave-active{
-        top: 100%;
+    .center{
+        padding:180px 150px;
+        font-family: "Comic Sans MS", cursive, sans-serif;
+        font-weight: 2.5em;
+    }
+    textarea{
+        height: 40px;
+        width: 120px;
+        border-color: dodgerblue;
+        border-style: groove;
+        border-width: 5px;
+    }
+    .heading{
+        text-align: center;
+        font-family: fantasy;
+        background-color: #61A1BC;
+        margin: 20px 0 20px 0;
+        color: white
+    }
+    .list-group{
+        list-style: none;
+
+    }
+    .list-group-item ,
+    .list-group-item-success,
+    .list-group-item-danger {
+        text-align: left;
+        margin:0 0 15px 0;
+        color: white;
+    }
+    .list-group-item-success {
+      background-color: #8EC16D;
+    }
+    .list-group-item-danger {
+        background-color:#E35885 ;
+    }
+    .sum{
+        border-top: 1px solid black;
+        color: white;
+
     }
 
 </style>
@@ -206,12 +248,14 @@ input[type=checkbox]{
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav navbar-right">
-        <li><a href="#">Home</a></li>
-        <li><a href="#/todo">Todo's</a></li>
-        <li><a href="#/colorChange">Change color</a></li>
-        <li><a href="#/carousel">Picture Slider</a></li>
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav navbar-right">
+            <li><a href="#">Home</a></li>
+            <li><a href="#/todo">Todo's</a></li>
+            <li><a href="#/colorChange">Change color</a></li>
+            <li><a href="#/carousel">Picture Slider</a></li>
+            <li><a href="#/editor">Inline Editor</a></li>
+            <li><a href="#/order">Order Form</a></li>
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
