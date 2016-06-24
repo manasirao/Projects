@@ -35,6 +35,10 @@ myApp.config(function($routeProvider){
             templateUrl: 'order.html',
             controller: 'orderController'
         })
+        .when('/grid',{
+            templateUrl: 'grid.html',
+            controller: 'gridController'
+        })
 });
 
 
@@ -205,4 +209,22 @@ myApp.controller('orderController',['$scope', function($scope) {
     }
 
 
+}]);
+
+//SWITCHABLE GRID
+myApp.controller('gridController',['$scope','$http',function($scope,$http) {
+    $http.get('products.json').success(function(data) {
+        $scope.products = data;
+    });
+
+    $scope.listed = false;
+    $scope.grid = false;
+    $scope.showList = function() {
+        $scope.listed = true;
+        $scope.grid = false;
+    }
+    $scope.showGrid = function() {
+        $scope.listed = false;
+        $scope.grid = true;
+    }
 }]);

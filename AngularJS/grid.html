@@ -1,0 +1,37 @@
+<div ng-controller="gridController">
+    <div class="row">
+        <div class="col-md-8 col-md-offset-1">
+            <nav class="navbar bar">
+                <div class="container-fluid">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li ng-click="showList()"><a href=""><span class="glyphicon glyphicon-list"></span></a></li>
+                        <li ng-click="showGrid()"><a href=""><span class="glyphicon glyphicon-th"></span></a></li>
+                    </ul>
+                </div>
+            </nav>
+
+            <div ng-show="listed" class="media bar" ng-repeat="p in products">
+                <div class="media-left">
+                    <a href="#">
+                        <img class="media-object image" ng-src="images/{{p.image}}">
+                    </a>
+                </div>
+                <div class="media-body">
+                    <h4 class="media-heading top">{{p.name}}</h4>
+                    {{p.details}}
+                </div>
+            </div>
+
+            <div ng-show="grid" class="col-md-6" ng-repeat="p in products" >
+                <div class="thumbnail">
+                    <img class="list-group-image" ng-src="images/{{p.image}}" />
+                    <div class="caption">
+                        <h4 class="media-heading top">{{p.name}}</h4>
+                        {{p.details}}
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

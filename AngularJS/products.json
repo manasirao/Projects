@@ -1,0 +1,82 @@
+[
+  {
+    "id": 1,
+    "name": "Black Pearl Box",
+    "description": "An Exotic fragrance",
+    "flavor": "fruity",
+    "type": "box",
+    "brand": "gopika",
+    "price": 350,
+    "sticks": 150,
+
+    "image": "black-pearl-box.jpg",
+    "productGroup": "blackpearl",
+    "details": "This is an awesome product",
+    "display": {
+      "orientation": "portrait"
+    }
+  },
+  {
+    "id": 2,
+    "name": "Shivalaya",
+    "description": "An Exotic fragrance",
+    "flavor": "fruity",
+    "type": "hexagon",
+    "brand": "gopika",
+    "price": 350,
+    "sticks": 150,
+    "image": "shivalaya-box.jpg",
+    "productGroup": "blackpearl",
+    "details": "This is an awesome product",
+    "display": {
+      "orientation": "portrait"
+    }
+  },
+  {
+    "id": 3,
+    "name": "Savithri",
+    "description": "An Exotic fragrance",
+    "flavor": "fruity",
+    "type": "pouch",
+    "brand": "gopika",
+    "price": 350,
+    "sticks": 150,
+    "image": "savithri.jpg",
+    "productGroup": "blackpearl",
+    "details": "this is an awesome product",
+    "display": {
+      "orientation": "portrait"
+    }
+  },
+  {
+    "name": "Natural",
+    "description": "An Exotic fragrance",
+    "type": "pouch",
+    "flavor": "fruity",
+    "brand": "gopika",
+    "price": 350,
+    "sticks": 150,
+    "image": "natural.jpg",
+    "productGroup": "blackpearl",
+    "details": "this is an awesome product",
+    "display": {
+      "orientation": "landscape"
+    }
+  },
+  {
+    "id": 3,
+    "name": "Mysore Royal",
+    "description": "An Exotic fragrance",
+    "type": "box",
+    "brand": "gopika",
+    "price": 350,
+    "sticks": 150,
+
+    "image": "mysoreroyal-box.jpg",
+    "productGroup": "mysoreroyal",
+    "details": "this is an awesome product",
+    "display": {
+      "orientation": "portrait"
+    }
+  }
+  ]
